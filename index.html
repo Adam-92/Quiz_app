@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <main class="quiz-container" id="score">
+        <section class="progress-bar">
+            <div class="question1">1</div>
+            <div class="question2">2</div>
+            <div class="question3">3</div>
+            <div class="question4">4</div>
+        </section>
+        <section class="header" id="question">
+            <h2>answer text</h2>
+        </section>
+        <section class="center-questions">
+            <ul>
+                <li>
+                    <input type="radio" id="a" name="answer" class="answer">
+                    <label for="a" id="a_text" class="pointer">answer</label>
+                </li>
+                <li>
+                    <input type="radio" id="b" name="answer" class="answer">
+                    <label for="b" id="b_text" class="pointer">answer</label>
+                </li>
+                <li>
+                    <input type="radio" id="c" name="answer" class="answer">
+                    <label for="c" id="c_text" class="pointer">answer</label>
+                </li>
+                <li>
+                    <input type="radio" id="d" name="answer" class="answer">
+                    <label for="d" id="d_text" class="pointer">answer</label>
+                </li>
+            </ul>
+        </section>
+        <p class="error"></p>
+        <button class="submit disabled-button" id="submit">SUBMIT</button>
+    </main>
+    <script src="./app.js"></script>
+</body>
+</html>

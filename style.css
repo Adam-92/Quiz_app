@@ -1,0 +1,130 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: linear-gradient(120deg, #f7dd1b, #f1b0b0);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    height: 100vh;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+main{
+    width: 1200px;
+}
+.quiz-container{
+    display:flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 30px 20px rgba(0,0,0,0.3);
+    height: auto;
+}
+.question1,
+.question2,
+.question3,
+.question4,
+.question5
+{
+    display: inline-block;
+    width: 100%;
+}
+.question1{
+    background-color: red; 
+}
+.question2{
+    background-color: yellow; 
+}
+.question3{
+    background-color: green;
+}
+.question4{
+    background-color: grey;
+}
+.header{
+    font-size: 2.2rem;
+    word-wrap: break-word;
+    margin: 1.5rem;
+}
+.pointer{
+    cursor: pointer;
+}
+.score{
+    font-size: 2rem;
+}
+.error{
+    font-size: 1.2rem;
+    color: red;
+    text-align: center;
+}
+
+
+ul li {
+    display: flex;
+    align-items: center;
+    margin: 2.5rem 6rem;
+    font-size: 1.8rem;
+    list-style-type:none;
+    text-transform: capitalize;
+}
+ul li label{
+    margin-left: 10px;
+}
+
+ul li:last-child{
+    margin-bottom: 2rem;
+}
+
+.points{
+    font-size: 25px;
+    margin-top: 50px;
+}
+
+
+
+.submit{
+    display: block;
+    width: 100%;
+    background-color: #f1b0b0;
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    font-family:inherit;
+    font-size: 1.4rem;
+    margin-top: auto;
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+}
+
+.submit:hover{
+    background-color: greenyellow;
+}
+
+
+@media (max-width: 768px) {
+    html{
+        font-size: 13px;
+    }
+    .quiz-container{
+        min-width: 300px;
+        width: 80%;
+    }
+    .center-questions{
+        margin: auto 0;
+    }
+    ul li {
+        margin: 2.5rem;
+    }
+}
+
+@media (orientation: landscape){
+    .quiz-container{
+        height: auto;
+        width: 70%;;
+    }
+}
