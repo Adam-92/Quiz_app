@@ -9,7 +9,7 @@ const d_text = document.getElementById("d_text");
 const button = document.getElementById("submit");
 const quiz_id = document.querySelector(".quiz-container");
 const error_p = document.querySelector('.error')
-const progress_barr = document.querySelector('.progress-bar')
+const progres_bar = document.querySelector('.progress-bar')
 /* -------Variables-------------------*/
 let currentQuestion = 0; 
 let arrayAnswers = [];
@@ -63,16 +63,75 @@ const quizData = [
 ];
 
 class Quiz {
-    arrayAnswers = [];
-    
     constructor(){
-        this.arrayAnswers = [];
         this.userAnswer = ''
-    }   
+        this.currentQuestion = 0
+        this.arrayAnswers = []
+        this.score = 0
+    }
+    getCurrentQuestion(){
+        return this.currentQuestion
+    }
+    getArrayAnswers(){
+        return this.arrayAnswers
+    }
+    getUserAnswer(){
+        return this.userAnswer
+    }
+    getScore(){
+        return this.score
+    }
+    getScore(){
+        return this.score
+    }
+    setUserAnswer(answer){
+        this.answer = answer
+    }
+    addScore(){
+        this.score++
+    }
+    addUserAnswer(answer){
+        this.arrayAnswer.push(answer)
+    }
+    IncrementQuestion(){
+        this.currentQuestion++
+    } 
 }
 
+class UI {
+    constructor(){
+        this.error = false
+    }
+    loadQuiz(){
+        this.deselectAnswers()
+        const currentQuizData = quizData[this.currentQuestion];
+        question.innerText = currentQuizData.question;
+
+        a_text.innerText = currentQuizData.a;
+        b_text.innerText = currentQuizData.b;
+        c_text.innerText = currentQuizData.c;
+        d_text.innerText = currentQuizData.d;
+    }
+    deselectAnswers(){
+        allInputs.forEach( input=>{
+            input.checked = false
+        })
+/*         const quiz = new Quiz()
+           quiz.setUserAnswer(true) */
+    }
+
+}
+
+
+const quiz = new Quiz('Adam')
+quiz.getAllData()
+
+
+
+
 function loadQuiz() {
-    deselectAnswers();
+    addProgressBar()
+    deselectAnswers()
 
     const currentQuizData = quizData[currentQuestion];
     questionE1.innerText = currentQuizData.question;
@@ -81,8 +140,6 @@ function loadQuiz() {
     b_text.innerText = currentQuizData.b;
     c_text.innerText = currentQuizData.c;
     d_text.innerText = currentQuizData.d;
-console.log("🚀 ~ file: app.js ~ line 14 ~ currentQuestion", currentQuestion)
-console.log("🚀 ~ file: app.js ~ line 17 ~ points", points)
 
 }
 
@@ -110,8 +167,22 @@ function errorDisplay(answer){
         error = true
         error_p.innerText = "Please choose the answer"
         loadQuiz()
+        
     }
 }
+
+function addProgressBar(){
+    const numberOfQuestions = quizData.length;
+    let divWithQuestions = ''
+    for(let i=0; i<numberOfQuestions - 1; i++ ){
+        divWithQuestions += `<div class="question">${i}</div>`
+    }
+  
+    progres_bar.innerHTML = divWithQuestions
+}
+
+
+
 
 button.addEventListener("click", () => {
   //this is the user choosen answer
@@ -125,6 +196,7 @@ button.addEventListener("click", () => {
   }
 
   if ( (currentQuestion < quizData.length - 1) && (!error) ) {
+    progres_bar.children[0].classList.add('addTransition')
     currentQuestion++;
     loadQuiz();
   } else if( (currentQuestion === quizData.length -1 ) && (!error)) {
@@ -136,15 +208,10 @@ button.addEventListener("click", () => {
 
 });
 
-loadQuiz();
 
-
-
-
-
-
-
-
+addEventListener('DOMContentLoaded', () => {
+    loadQuiz()
+})
 
 
 

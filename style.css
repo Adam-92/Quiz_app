@@ -24,27 +24,19 @@ main{
     box-shadow: 0 0 30px 20px rgba(0,0,0,0.3);
     height: auto;
 }
-.question1,
-.question2,
-.question3,
-.question4,
-.question5
-{
-    display: inline-block;
-    width: 100%;
+.progress-bar{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
 }
-.question1{
-    background-color: red; 
+.question{
+    background-color: transparent;
+    transition: all ease 1s;
+   /*  background-color: rgba(81, 92, 250, 0.932) */
 }
-.question2{
-    background-color: yellow; 
+.addTransition{
+    background-color: rgba(81, 92, 250, 0.932);
 }
-.question3{
-    background-color: green;
-}
-.question4{
-    background-color: grey;
-}
+
 .header{
     font-size: 2.2rem;
     word-wrap: break-word;
