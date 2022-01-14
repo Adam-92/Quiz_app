@@ -26,8 +26,22 @@ main{
 }
 .progress-bar{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
 }
+
+.progress-section{
+    background-color: transparent;
+    border-right: 1px solid rgba(0,0,0,0.2);
+    transition: .5s all ease;
+    color: transparent;
+}
+.progress-section:first-child{
+    border-top-left-radius: 0.5rem;
+}
+.progress-section:last-child{
+    border-right: none;
+    border-top-right-radius: 0.5rem;
+}
+
 .question{
     background-color: transparent;
     transition: all ease 1s;
