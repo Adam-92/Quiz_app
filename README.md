@@ -1,3 +1,6 @@
+![image](https://user-images.githubusercontent.com/45037539/149627868-fcb59d77-d49b-4bd9-9c54-4c9c2f6933d5.png)
+
+
 # Live view
 https://quiz-up-app.netlify.app/
 
